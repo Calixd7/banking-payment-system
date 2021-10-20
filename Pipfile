@@ -1,0 +1,21 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = "*"
+djangorestframework = "*"
+django-extensions = "*"
+django-debug-toolbar = "*"
+django-environ = "*"
+psycopg2-binary = "*"
+django-on-heroku = "*"
+gunicorn = "*"
+django-filter = "*"
+django-cors-headers = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.9"
