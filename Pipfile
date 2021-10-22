@@ -14,6 +14,7 @@ django-on-heroku = "*"
 gunicorn = "*"
 django-filter = "*"
 django-cors-headers = "*"
+djoser = "*"
 
 [dev-packages]
 

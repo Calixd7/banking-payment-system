@@ -47,7 +47,10 @@ INSTALLED_APPS = [
     'django_extensions',
     'debug_toolbar',
     'corsheaders',
-    'django_filters'
+    'django_filters',
+    'djoser',
+    'rest_framework',
+    'rest_framework.authtoken',
 ]
 
 MIDDLEWARE = [
@@ -143,7 +146,30 @@ INTERNAL_IPS = [
     # ...
 ]
 
+CORS_ALLOW_ALL_ORIGINS = True
+
 # Configure Django App for Heroku.
 import django_on_heroku
 django_on_heroku.settings(locals())
 del DATABASES['default']['OPTIONS']['sslmode']
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ],
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+        # 'rest_framework.authentication.SessionAuthentication',
+    ]
+}
+
+
+#Custom User Model
+
+AUTH_USER_MODEL = 'core.user'
+
+
+# configure Djoser
+DJOSER = {
+    "USER_ID_FIELD": "username"
+}
